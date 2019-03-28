@@ -20,15 +20,18 @@
 % The script requires the MatClassRSA toolbox to be already  installed and
 % added to the path: https://github.com/berneezy3/MatClassRSA
 
-% TODO: Re-add license info
+% Copyright (c) 2019 Steven Losorelli and Blair Kaneshiro
+%
+% This work is licensed under the Creative Commons Attribution 4.0 
+% International License. To view a copy of this license, visit 
+% http://creativecommons.org/licenses/by/4.0/ or send a letter to 
+% Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
 clear all; close all; clc
 rng('shuffle');
 
-% TODO: Update inDir, outDir; delete addpath statement
-inDir = '/usr/ccrma/media/projects/jordan/Experiments/ACLS1.2_manuscript/Data';
-outDir = '/usr/ccrma/media/projects/jordan/Experiments/ACLS1.2_manuscript/ClassifierOutput';
-addpath(genpath( '/usr/ccrma/media/projects/jordan/Experiments/ACLS1.2_manuscript/MatClassRSA-development'))
+inDir = '../Data';
+outDir = '../ClassifierOutput';
 
 % Load 500s .mat
 
