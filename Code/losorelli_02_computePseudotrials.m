@@ -5,6 +5,9 @@
 % averaged in groups of 5 trials on a per-participant, per-stimulus basis,
 % resulting in 500-sweep averaged pseudotrials. Pseudotrials are then saved
 % in a single .mat file. 
+%
+% The script requires the MatClassRSA toolbox to be already installed and
+% added to the path: https://github.com/berneezy3/MatClassRSA
 
 % Copyright (c) 2019 Steven Losorelli and Blair Kaneshiro
 %
