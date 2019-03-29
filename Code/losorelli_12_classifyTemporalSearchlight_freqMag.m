@@ -1,19 +1,33 @@
 % losorelli_12_classifyTemporalSearchlight_freqMag.m
 % -------------------------------------------------------
-% This script blah blah
+% This script performs temporal searchlight classifications on 500-sweep 
+% pseudotrial averages of data. The pseudotrials are subset using a 
+% 50-msec window which advances in 25-msec increments (50% overlap between 
+% windows). For this classification, the data are transformed to the
+% frequency domain, and magnitude coefficients corresponding to
+% positive frequencies up to 1000 Hz are input to the classifier.
+% The first part of the script performs the main classification. The second
+% part of the script performs permutation testing. Permutation testing can
+% take one hour or longer to run. Finally, the third part of the script
+% loads the outputs from the previous parts and computes the p-value for
+% each temporal window. Note that multiple comparison correction is not
+% performed here.
 %
 % The script requires the MatClassRSA toolbox to be already  installed and
 % added to the path: https://github.com/berneezy3/MatClassRSA
 
-% TODO: Re-add license info
+% Copyright (c) 2019 Steven Losorelli and Blair Kaneshiro
+%
+% This work is licensed under the Creative Commons Attribution 4.0 
+% International License. To view a copy of this license, visit 
+% http://creativecommons.org/licenses/by/4.0/ or send a letter to 
+% Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
 clear all; close all; clc
 rng('shuffle');
 
-% TODO: Update inDir, outDir; delete addpath statement
-inDir = '/usr/ccrma/media/projects/jordan/Experiments/ACLS1.2_manuscript/Data';
-outDir = '/usr/ccrma/media/projects/jordan/Experiments/ACLS1.2_manuscript/ClassifierOutput';
-addpath(genpath( '/usr/ccrma/media/projects/jordan/Experiments/ACLS1.2_manuscript/MatClassRSA-development'))
+inDir = '../Data';
+outDir = '../ClassifierOutput';
 
 % Load 500s .mat (data X, labels Y)
 cd(inDir)
