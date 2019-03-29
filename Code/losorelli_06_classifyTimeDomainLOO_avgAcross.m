@@ -1,24 +1,24 @@
 % losorelli_06_classifyTimeDomainLOO_avgAcross.m
 % -------------------------------------------------
 % This script performs the leave-one-(participant)-out classification of
-% 500-sweep averaged pseudotrials, where pseudotrial averaging of training
-% data is performed across participant, and pseudotrial averaging of test
-% data is performed within-participant (reported in Figure 2C). Loaded 
-% data are 100-sweep averaged
-% trials (for training partitions) and 500-sweep averaged pseudotrials (for
-% test partitions). All data are epoched from 5-145 msec relative to
-% stimulus onset. With 13 participants, classification is performed using
-% 13-fold cross validation, LDA, and dimensionality reduction using PCA
-% (components retained explain 99% of the variance). The first part of the
-% script runs the classification and  saves out a .mat file. The second
-% part of the script conducts the permutation test (1,000 classification
-% with training labels and test labels shuffled independently of their
-% respective data observations), and saves out a .mat file. Permutation
-% testing can take over one hour to run. In the third and final part of
-% the script, the intact and permutation-test classification results are
-% loaded, and the p-value is computed.
+% 500-sweep averaged pseudo-trials, where pseudo-trial averaging of 
+% training data is performed across participant, and pseudo-trial 
+% averaging of test data is performed within-participant (reported in 
+% Figure 2C). Loaded data are 100-sweep averaged trials (for training 
+% partitions) and 500-sweep averaged pseudo-trials (for test partitions). 
+% All data are epoched from 5-145 msec relative to stimulus onset. With 13 
+% participants, classification is performed using 13-fold cross validation, 
+% LDA, and dimensionality reduction using PCA (components retained explain 
+% 99% of the variance). The first part of the script runs the 
+% classification and  saves out a .mat file. The second part of the script 
+% conducts the permutation test (1,000 classification with training labels 
+% and test labels shuffled independently of their respective data 
+% observations), and saves out a .mat file. Permutation testing can take 
+% over one hour to run. In the third and final part of the script, the 
+% intact and permutation-test classification results are loaded, and the 
+% p-value is computed.
 %
-% The script requires the MatClassRSA toolbox to be already  installed and
+% The script requires the MatClassRSA toolbox to be already installed and
 % added to the path: https://github.com/berneezy3/MatClassRSA
 
 % Copyright (c) 2019 Steven Losorelli and Blair Kaneshiro
@@ -53,12 +53,12 @@ clear X Y P
 
 %% Classify (intact) and save output
 
-% Here, 100-sweep trials are averaged into 500-sweep pseudotrials *across
+% Here, 100-sweep trials are averaged into 500-sweep pseudo-trials *across
 % participants*, meaning that data from different participants can be
-% combined into a single 500-sweep pseudotrial. To do this, we call the
+% combined into a single 500-sweep pseudo-trial. To do this, we call the
 % MatClassRSA 'averageTrials' function on the 100-sweep data that has been
 % aggregated across training participants. For testing, however, we pass in
-% the 500-sweep precomputed within-participant pseudotrials.
+% the 500-sweep precomputed within-participant pseudo-trials.
 
 nParticipants = 13;
 

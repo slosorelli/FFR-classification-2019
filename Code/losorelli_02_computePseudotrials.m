@@ -3,8 +3,8 @@
 % This script loads the .mat file containing aggregated 100-sweep averaged
 % trials, epoched from 5-145 msec relative to stimulus onset. The data are
 % averaged in groups of 5 trials on a per-participant, per-stimulus basis,
-% resulting in 500-sweep averaged pseudotrials. Pseudotrials are then saved
-% in a single .mat file. 
+% resulting in 500-sweep averaged pseudo-trials. Pseudo-trials are then 
+% saved in a single .mat file. 
 %
 % The script requires the MatClassRSA toolbox to be already installed and
 % added to the path: https://github.com/berneezy3/MatClassRSA
@@ -35,10 +35,10 @@ clear X Y P
 
 %% Perform within-participant averaging
 
-% We average groups of 5 trials to create pseudotrials. Trials are averaged
-% on a per-stimulus, per-participant basis. In each averaging operation we
-% randomize trial order prior to averaging to remove ordering effects from
-% the data.
+% We average groups of 5 trials to create pseudo-trials. Trials are 
+% averaged on a per-stimulus, per-participant basis. In each averaging 
+% operation we randomize trial order prior to averaging to remove ordering 
+% effects from the data.
 
 nTrials = 5; shuffleBeforeAveraging = 1;
 [X, Y, P] = averageTrialsByParticipant(...

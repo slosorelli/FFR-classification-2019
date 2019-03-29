@@ -1,23 +1,22 @@
 % losorelli_09_classifyFreqDomain_phase.m
 % ---------------------------------------------
 % This script performs the classification analysis of 500-sweep averaged
-% pseudotrials, where responses have been transformed to the frequency
-% domain (reported in Figure XX). Loaded data are 500-sweep averaged
-% pseudotrials, epoched from 5-145 msec relative to stimulus onset. The FFT
-% length corresponds to the number of time points in the signal (2,801);
-% Fourier magnitudes for positive frequencies up to 1,000 Hz are input to
-% the classifier.
-% Classification is performed across participants using 10-fold cross
-% validation, LDA, and dimensionality reduction using PCA (components
-% retained explain 99% of the variance). The first part of the script
-% runs the classification and saves out a .mat file. The second part of the
-% script conducts the permutation test (1,000 classifications with labels
-% shuffled independently of data observations) and saves out a .mat file.
-% Permutation testing can take over one hour to run. In the third and
-% final part of the script, the intact and permutation-test classification
-% results are loaded, and the p-value is computed.
+% pseudo-trials, where responses have been transformed to the frequency
+% domain (reported in Figure 3C). Loaded data are 500-sweep averaged
+% pseudo-trials, epoched from 5-145 msec relative to stimulus onset. The 
+% FFT length corresponds to the number of time points in the signal 
+% (2,801); Fourier magnitudes for positive frequencies up to 1,000 Hz are 
+% input to the classifier. Classification is performed across participants 
+% using 10-fold cross validation, LDA, and dimensionality reduction using
+% PCA (components retained explain 99% of the variance). The first part of 
+% the script runs the classification and saves out a .mat file. The second 
+% part of the script conducts the permutation test (1,000 classifications 
+% with labels shuffled independently of data observations) and saves out a 
+% .mat file. Permutation testing can take over one hour to run. In the 
+% third and final part of the script, the intact and permutation-test 
+% classification results are loaded, and the p-value is computed.
 %
-% The script requires the MatClassRSA toolbox to be already  installed and
+% The script requires the MatClassRSA toolbox to be already installed and
 % added to the path: https://github.com/berneezy3/MatClassRSA
 
 % Copyright (c) 2019 Steven Losorelli and Blair Kaneshiro

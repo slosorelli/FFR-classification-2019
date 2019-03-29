@@ -1,18 +1,18 @@
 % losorelli_14_analyzePerceptualData.m
 % ---------------------------------------
-% This script analyzes the perceptual responses (reported in Figure XX).
-% Each participant's perceptual test produced a .csv file containing
-% reported and actual stimulus labels for each trial. The first part of
-% the script converts each .csv to a confusion matrix, and subsequently
-% computes individual-participant and aggregate accuracies. The second part
-% of the script conducts the permutation test (computation of confusion
-% matrices 1,000 times with actual labels shuffled independently of
-% reported labels) and saves out a .mat file. Permutation testing should
-% take seconds to run. In the third and final part of the script, the
-% intact and permutation-test results are loaded, and the p-value is
-% computed.
+% This script analyzes the perceptual responses (reported in Figure 5 and 
+% Supplementary Figure S5). Each participant's perceptual test produced a 
+% .csv file containing reported and actual stimulus labels for each trial. 
+% The first part of the script converts each .csv to a confusion matrix, 
+% and subsequently computes individual-participant and aggregate 
+% accuracies. The second part of the script conducts the permutation test 
+% (computation of confusion matrices 1,000 times with actual labels 
+% shuffled independently of reported labels) and saves out a .mat file. 
+% Permutation testing should take seconds to run. In the third and final 
+% part of the script, the intact and permutation-test results are loaded, 
+% and the p-value is computed.
 %
-% The script requires the MatClassRSA toolbox to be already  installed and
+% The script requires the MatClassRSA toolbox to be already installed and
 % added to the path: https://github.com/berneezy3/MatClassRSA
 
 % Copyright (c) 2019 Steven Losorelli and Blair Kaneshiro

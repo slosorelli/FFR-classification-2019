@@ -1,19 +1,19 @@
 % losorelli_11_classifyTemporalSearchlight_freqComplex.m
 % -------------------------------------------------------
 % This script performs temporal searchlight classifications on 500-sweep 
-% pseudotrial averages of data. The pseudotrials are subset using a 
+% pseudo-trial averages of data. The pseudo-trials are subset using a 
 % 50-msec window which advances in 25-msec increments (50% overlap between 
 % windows). For this classification, the data are transformed to the
 % frequency domain, and real and imaginary coefficients corresponding to
-% positive frequencies at 1000 Hz and below are input to the classifier.
-% The first part of the script performs the main classification. The second
-% part of the script performs permutation testing. Permutation testing can
-% take one hour or longer to run. Finally, the third part of the script
-% loads the outputs from the previous parts and computes the p-value for
-% each temporal window. Note that multiple comparison correction is not
-% performed here.
+% positive frequencies up to 1000 Hz are input to the classifier 
+% (Supplementary Figure S2). The first part of the script performs the 
+% main classification. The second part of the script performs permutation 
+% testing. Permutation testing can take one hour or longer to run. Finally, 
+% the third part of the script loads the outputs from the previous parts 
+% and computes the p-value for each temporal window. Note that multiple 
+% comparison correction is not performed here.
 %
-% The script requires the MatClassRSA toolbox to be already  installed and
+% The script requires the MatClassRSA toolbox to be already installed and
 % added to the path: https://github.com/berneezy3/MatClassRSA
 
 % Copyright (c) 2019 Steven Losorelli and Blair Kaneshiro

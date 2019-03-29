@@ -1,8 +1,8 @@
 % losorelli_04_classifyTimeDomainCV_500s.m
 % -------------------------------------------
 % This script performs the classification analysis of 500-sweep averaged
-% pseudotrials (reported in Figure 2A). Loaded data are 500-sweep averaged
-% pseudotrials, epoched from 5-145 msec relative to stimulus onset.
+% pseudo-trials (reported in Figure 2A). Loaded data are 500-sweep averaged
+% pseudo-trials, epoched from 5-145 msec relative to stimulus onset.
 % Classification is performed across participants using 10-fold cross
 % validation, LDA, and dimensionality reduction using PCA (components
 % retained explain 99% of the variance). The first part of the script
@@ -13,7 +13,7 @@
 % final part of the script, the intact and permutation-test classification
 % results are loaded, and the p-value is computed.
 %
-% The script requires the MatClassRSA toolbox to be already  installed and
+% The script requires the MatClassRSA toolbox to be already installed and
 % added to the path: https://github.com/berneezy3/MatClassRSA
 
 % Copyright (c) 2019 Steven Losorelli and Blair Kaneshiro

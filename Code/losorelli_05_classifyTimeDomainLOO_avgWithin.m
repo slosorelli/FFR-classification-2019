@@ -1,9 +1,9 @@
 % losorelli_05_classifyTimeDomainLOO_avgWithin.m
 % -------------------------------------------------
 % This script performs the leave-one-(participant)-out classification of
-% 500-sweep averaged pseudotrials, where pseudotrial averaging of both
+% 500-sweep averaged pseudo-trials, where pseudo-trial averaging of both
 % training and test data has been performed within-participant (reported in 
-% Figure 2B). Loaded data are 500-sweep averaged pseudotrials, epoched 
+% Figure 2B). Loaded data are 500-sweep averaged pseudo-trials, epoched 
 % from 5-145 msec relative to stimulus onset. With 13 participants, 
 % classification is performed using 13-fold cross validation, LDA, and 
 % dimensionality reduction using PCA (components retained explain 99% of 
@@ -16,7 +16,7 @@
 % permutation-test classification results are loaded, and the p-value is 
 % computed.
 %
-% The script requires the MatClassRSA toolbox to be already  installed and
+% The script requires the MatClassRSA toolbox to be already installed and
 % added to the path: https://github.com/berneezy3/MatClassRSA
 
 % Copyright (c) 2019 Steven Losorelli and Blair Kaneshiro

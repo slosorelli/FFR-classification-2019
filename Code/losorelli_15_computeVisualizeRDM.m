@@ -3,9 +3,10 @@
 % This script loads output data and computes a CM and Dendrogram for the
 % results. First, the entire epoched 100/500s .mat files are loaded and the
 % results are plotted. Next, temporal searchlight analyses are visualized
-% for the corresponding searchlight output data. 
+% for the corresponding searchlight output data. Note that the user needs
+% to specify the input filenames for creating the visualizations.
 %
-% The script requires the MatClassRSA toolbox to be already  installed and
+% The script requires the MatClassRSA toolbox to be already installed and
 % added to the path: https://github.com/berneezy3/MatClassRSA
 
 % Copyright (c) 2019 Steven Losorelli and Blair Kaneshiro
