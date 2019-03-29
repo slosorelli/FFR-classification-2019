@@ -7,23 +7,26 @@
 % computes individual-participant and aggregate accuracies. The second part
 % of the script conducts the permutation test (computation of confusion
 % matrices 1,000 times with actual labels shuffled independently of
-% reported labels) and saves out a .mat file. Permutation testing can take
-% over XX XXXXXX to run. In the third and final part of the script, the
+% reported labels) and saves out a .mat file. Permutation testing should
+% take seconds to run. In the third and final part of the script, the
 % intact and permutation-test results are loaded, and the p-value is
 % computed.
 %
 % The script requires the MatClassRSA toolbox to be already  installed and
 % added to the path: https://github.com/berneezy3/MatClassRSA
 
-% TODO: Re-add license info
+% Copyright (c) 2019 Steven Losorelli and Blair Kaneshiro
+%
+% This work is licensed under the Creative Commons Attribution 4.0 
+% International License. To view a copy of this license, visit 
+% http://creativecommons.org/licenses/by/4.0/ or send a letter to 
+% Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
 clear all; close all; clc
 rng('shuffle');
 
-% TODO: Update inDir, outDir; delete addpath statement
-inDir = '/usr/ccrma/media/projects/jordan/Experiments/ACLS1.2_manuscript/Data/PerceptualData';
-outDir = '/usr/ccrma/media/projects/jordan/Experiments/ACLS1.2_manuscript/ClassifierOutput';
-addpath(genpath( '/usr/ccrma/media/projects/jordan/Experiments/ACLS1.2_manuscript/MatClassRSA-development'))
+inDir = '../Data/PerceptualData';
+outDir = '../../ClassifierOutput';
 
 cd(inDir)
 fList = dir('*.csv');
