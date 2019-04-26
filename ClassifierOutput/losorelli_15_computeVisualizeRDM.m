@@ -1,9 +1,8 @@
 % losorelli_15_computeVisualizeRDM.m
 % --------------------------------------
 % This script is illustrative of the confusion matrix and dendrogram plots 
-% done dor figure 2A. Specifically, it plots the classifier output for
-% time-domain 500s .mat pseudo-trials. The entire epoched 500s .mat files 
-% are loaded and the results are plotted. Note that the user needs
+% done for figure 2A. Specifically, it plots the classifier output for
+% time-domain 500s .mat pseudo-trials. Note that the user needs
 % to specify the input filenames for creating the visualizations.
 %
 % The script requires the MatClassRSA toolbox to be already installed and
