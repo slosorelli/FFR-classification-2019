@@ -36,11 +36,13 @@ cd(timeDir)
 load alltime.mat %timing information from IHS system
 
 cd(inDir)
+% Get the list of files ending in .TXT
 fList = dir('*.TXT'); % Note that the search for '.TXT' is case sensitive.
 if isempty(fList), error('No files found.'); end
 fNames = {fList.name}; % Cell array of filenames
  
-
+% Iterate through the .TXT files one at a time. The function being called
+% loads each file, extracts its data, and writes the output to a .mat file.
 % requires function 'extractSubAvgIHSExportFromFile'
 for f = 1:length(fList)
    extractSubAvgIHSExportFromFile(inDir, outDir, fNames{f})
@@ -50,17 +52,25 @@ end
 
 inDir = outDir; 
 
+% Specify our stim names, which are in the .mat filenames
 stimNames = {'Ba', 'Da', 'Di', 'Piano', 'Bassoon', 'Tuba'};
 nStims = length(stimNames);
 
-
+% Initialize our variables.
+% - X is the time x trials data frame
+% - Y is the labels vector
+% - P is the vector of participant identifiers
 X = [];
 Y = [];
 P0 = [];
+
+% This is the variable we need from the individual .mat files.
 varToLoad = 'subAvg_uV';
+
+% This is the variable we loaded previously (IHS timing information).
 t = allTime;
 
-
+% Iterate through the files for each stimulus:
 for i = 1:nStims
     disp(['loading stimulus file ' stimNames{i}])
     flist = dir([ inDir '*' '_' stimNames{i} '.mat']);
@@ -69,10 +79,17 @@ for i = 1:nStims
         disp(['loading data from file ' flist(f).name])
         currFile = load(flist(f).name, varToLoad);
         currData = currFile.(varToLoad);
+        
+        % Current participant is from the filename
         currParticipant = str2num(flist(f).name(10:11));
+        
+        % Concatenate data along the trial dimension
         X = horzcat(X, currData);
+        
+        % Concatenate labels and participant identifiers on row dimension
         Y = [Y repmat(i,1,size(currData,2))];
         P0 = [P0 repmat(currParticipant,1,size(currData,2))];
+        
         clear curr*
     end   
 end
@@ -95,12 +112,18 @@ save('losorelli_100sweep_alltime.mat', 'X', 'Y', 'P', 't');
 
 msStart= 5; 
 msEnd = 145;
-idxUse = find(allTime >= msStart & allTime <= msEnd);  
+idxUse = find(allTime >= msStart & allTime <= msEnd); 
+
+% Keep only the rows (times) falling in our epoch
 respUse = X(idxUse, :);
-X = respUse;
+X = respUse; % Reassign to X
+
+% Update time variable 't', which we will save
 t = allTime(idxUse);
 
 % center the data
+% This function removes the mean from every ROW of data. For us, every
+% trial is a column, so we transpose the matrix first.
 X = dcCorrect(X');
 
 %% [optional] Save out epoched data (5- to 145-msec; X, Y, P, t)
