@@ -40,7 +40,12 @@ clear X Y P
 % operation we randomize trial order prior to averaging to remove ordering 
 % effects from the data.
 
-nTrials = 5; shuffleBeforeAveraging = 1;
+nTrials = 5; % How many trials in each pseudo-trial
+shuffleBeforeAveraging = 1; % Whether to shuffle data before averaging
+
+% This function averages the trials on a per-stimulus, per-participant
+% basis. It outputs the data averaged in pseudo-trials and the
+% corresponding labels and participants vectors.
 [X, Y, P] = averageTrialsByParticipant(...
     XIn, YIn, PIn, nTrials, shuffleBeforeAveraging);
 
